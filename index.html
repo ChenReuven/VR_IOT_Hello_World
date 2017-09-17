@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame"/>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+<body class="a-body ">
+<a-scene class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+
+    <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+
+
+    <a-sphere class="first-sphere" position="-1.948 1.25 -7.276" radius="1.25" color="#ffffff" scale="0.5 0.5 0.5"></a-sphere>
+    <a-sphere class="center-sphere" position="0.039 1.25 -7.301" radius="1.25" color="#ffffff" scale="0.5 0.5 0.5" material=""
+              geometry=""></a-sphere>
+    <a-sphere class="last-sphere" position="1.96 1.25 -7.289" radius="1.25" color="#ffffff" scale="0.5 0.5 0.5"></a-sphere>
+
+    <a-plane position="0 0 -4" rotation="-90.01166961505233 0 0" width="4" height="4" color="#7BC8A4" scale="2 2 2"
+             material="" geometry=""></a-plane>
+    <a-plane position="-3.99 2.139 -4" rotation="0 90.01166961505233 -90.01166961505233" width="4" height="4"
+             color="#7BC8A4" scale="1.066 2.005 1.617"></a-plane>
+    <a-plane position="3.959 2.139 -4" rotation="0 -90.01166961505233 -90.01166961505233" width="4" height="4"
+             color="#7BC8A4" scale="1.066 2.005 1.617"></a-plane>
+    <a-plane position="-0.028 2.139 -7.976" rotation="0 0 -90.01166961505233" width="4" height="4" color="#7BC8A4"
+             scale="1.066 2.005 1.617"></a-plane>
+    <a-sky color="#ECECEC" material="" geometry=""></a-sky>
+</a-scene>
+
+<script src="main.js"></script>
+</body>
+</html>
