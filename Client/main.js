@@ -35,3 +35,14 @@ pressAllButtonElement.addEventListener('mouseleave', function () {
     centerSphereElement.setAttribute('color', '#ffffff');
     lastSphereElement.setAttribute('color', '#ffffff');
 });
+
+
+/* Socket */
+const socket = io();
+
+socket.on('test', function () {
+   console.log('U Get Test message from the server');
+});
+socket.on('disconnect', function () {
+    log('you have been disconnected');
+});
