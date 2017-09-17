@@ -1,6 +1,5 @@
 const firstSphereElement = document.querySelector('.first-sphere');
 firstSphereElement.addEventListener('mouseenter', function (evt) {
-    console.log(firstSphereElement);
     firstSphereElement.setAttribute('color', 'red');
 });
 firstSphereElement.addEventListener('mouseleave', function () {
@@ -20,5 +19,19 @@ lastSphereElement.addEventListener('mouseenter', function (evt) {
     lastSphereElement.setAttribute('color', 'green');
 });
 lastSphereElement.addEventListener('mouseleave', function () {
+    lastSphereElement.setAttribute('color', '#ffffff');
+});
+
+const pressAllButtonElement = document.querySelector('.press-all-btn');
+pressAllButtonElement.addEventListener('mouseenter', function (evt) {
+    pressAllButtonElement.setAttribute('color', 'orange');
+    firstSphereElement.setAttribute('color', 'red');
+    centerSphereElement.setAttribute('color', 'yellow');
+    lastSphereElement.setAttribute('color', 'green');
+});
+pressAllButtonElement.addEventListener('mouseleave', function () {
+    pressAllButtonElement.setAttribute('color', '#ffffff');
+    firstSphereElement.setAttribute('color', '#ffffff');
+    centerSphereElement.setAttribute('color', '#ffffff');
     lastSphereElement.setAttribute('color', '#ffffff');
 });
