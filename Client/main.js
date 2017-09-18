@@ -38,11 +38,13 @@ pressAllButtonElement.addEventListener('mouseleave', function () {
 
 
 /* Socket */
-const socket = io();
-
-socket.on('test', function () {
-   console.log('U Get Test message from the server');
+const socket = io('http://127.0.0.1:3000');
+socket.on('connect', function () {
+    console.log('you have been connected');
 });
 socket.on('disconnect', function () {
-    log('you have been disconnected');
+    console.log('you have been disconnected');
+});
+socket.on('test', function () {
+    console.log('U Get Test message from the server');
 });
