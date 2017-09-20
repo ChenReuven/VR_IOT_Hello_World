@@ -3,29 +3,55 @@
 var Cylon = require('cylon');
 
 Cylon.robot({
-    name: 'rosie',
-    events: ['test'],
+    name: 'led-robot',
+    events: ['toggle'],
 
     connections: {
-        //arduino: { adaptor: 'firmata', port: '/dev/ttyACM0' }
+        arduino: { adaptor: 'firmata', port: '/dev/tty.usbmodem1411' }
     },
 
     devices: {
-        //led: { driver: 'led', pin: 13 }
+        led13: { driver: 'led', pin: 13 },
+        led12: { driver: 'led', pin: 12 },
+        led11: { driver: 'led', pin: 11 }
+    },
+
+    // Events/Commands To The server From Outside
+    // In <-
+    commands: function() {
+        return {
+            turned_toggle_red: this.turnedToggleRedHandler,
+            turned_toggle_yellow: this.turnedToggleYellowHandler,
+            turned_toggle_green: this.turnedToggleGreenHandler,
+            turned_toggle_all: this.turnedToggleAllHandler
+        };
+    },
+
+    turnedToggleRedHandler: function() {
+        if(this.led13){
+            this.led13.toggle();
+        }
+    },
+
+    turnedToggleYellowHandler: function () {
+        if(this.led12){
+            this.led12.toggle();
+        }
+    },
+
+    turnedToggleGreenHandler: function () {
+        if(this.led11){
+            this.led11.toggle();
+        }
+    },
+
+    turnedToggleAllHandler: function () {
+        this.turnedToggleRedHandler();
+        this.turnedToggleYellowHandler();
+        this.turnedToggleGreenHandler();
     },
 
     work: function() {
-        every((2).seconds(), function() {
-            console.log('workkkkkkkkk');
-            this.emit('test', { data: 'test param is over'});
-        }.bind(this) ,2000)
-
-
-
-        // for this example with sockets
-        // we are going to be interacting
-        // with the robot using the code in
-        // ./**-client.html
     }
 });
 
@@ -33,7 +59,7 @@ Cylon.robot({
 // $ npm install cylon-api-socket-io
 Cylon.api(
     'socketio', {
-        host: '127.0.0.1',
+        host: '0.0.0.0',
         port: '3000'
     });
 
