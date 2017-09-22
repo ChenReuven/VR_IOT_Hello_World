@@ -19,6 +19,9 @@ How to use:
   - IMPORTANT: for the Led Connection on pin 11,12,13 - U MUST  connect your led in your board to those leds.
   
 Note: This is NOT a production code, its really just for quick and dirty POC
+Note:
+1. u can see the image*-demp jpg for print screens
+2. u can see the demo video here: https://youtu.be/yiSTdbM-tR0
 
 Enjoy,
 Chen.R
