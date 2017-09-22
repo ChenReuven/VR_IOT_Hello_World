@@ -2,6 +2,7 @@ window.onload = function() {
 
     /* Socket */
     const socket = io('ws://192.168.14.171:3000/api/robots/led-robot');
+    // const socket = io('ws://your local machine IP:3000/api/robots/led-robot');
 
     socket.on('connect', function () {
         console.log('you have been connected');
